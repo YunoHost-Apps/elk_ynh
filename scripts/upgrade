@@ -20,7 +20,26 @@ ynh_systemctl --service="$app" --action="stop"
 
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep=".env"
+ynh_setup_source --dest_dir="$install_dir" --full_replace=1 --keep=".env elk-data"
+
+chown -R "$app:$app" "$install_dir"
+
+#=================================================
+# BUILD APP
+#=================================================
+
+ynh_script_progression "Building $app... (this may take a while)"
+
+pushd $install_dir
+
+    ynh_hide_warnings corepack enable
+    ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
+    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
+    ynh_hide_warnings ynh_exec_as_app pnpm dlx tsx scripts/prepare-translation-status.ts
+    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
+
+popd
 
 chown -R "$app:$app" "$install_dir"
 
