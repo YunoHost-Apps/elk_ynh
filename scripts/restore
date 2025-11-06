@@ -10,7 +10,7 @@ source /usr/share/yunohost/helpers
 # RESTORE THE APP MAIN DIR
 #=================================================
 
-ynh_script_progression "Restoring the app main directory..."
+ynh_script_progression "Restoring $app main directory..."
 
 ynh_restore "$install_dir"
 
@@ -42,7 +42,7 @@ ynh_restore "/var/log/$app/"
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 
-ynh_script_progression "Reloading web server and $app's service..."
+ynh_script_progression "Reloading web server and $app service..."
 
 ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log" --wait_until="Listening on"
 
