@@ -35,7 +35,6 @@ ynh_script_progression "Building $app... (this may take a while)"
 pushd $install_dir
 
     ynh_hide_warnings corepack enable
-
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
     ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
