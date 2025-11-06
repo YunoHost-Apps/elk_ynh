@@ -1,0 +1,1 @@
+Elk est un moyen alternatif d'accéder à votre compte Mastodon depuis votre navigateur, à l'aide de l'API Mastodon. Vous pouvez utiliser Elk directement dans votre navigateur ; sur un appareil mobile, vous pouvez installer l'application sur votre écran d'accueil directement depuis votre navigateur pour y accéder facilement.

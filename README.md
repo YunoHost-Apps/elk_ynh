@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   Elk, packaged for YunoHost
 </h1>
 
-nimble Mastodon web client
+nimble Mastodon Web client
 
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://elk.zone)
 [![Version: 0.16.0~ynh1](https://img.shields.io/badge/Version-0.16.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/elk/)
