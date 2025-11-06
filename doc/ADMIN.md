@@ -1,1 +1,1 @@
-If you've set a Public/Default server, that server must expose its local feed publicly in order for Elk to display anything prior to login, otherwise you'll get an 'unauthorized' error.
+* If you've set a Public/Default server, that server must expose its local feed publicly in order for Elk to display anything prior to login, otherwise you'll get an 'unauthorized' error.
