@@ -1,0 +1,77 @@
+#!/bin/bash
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source /usr/share/yunohost/helpers
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+
+ynh_script_progression "Setting up source files..."
+
+ynh_setup_source --dest_dir="$install_dir"
+
+chown -R "$app:$app" "$install_dir"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+
+ynh_script_progression "Adding $app's configuration files..."
+
+ynh_config_add --template="env" --destination="$install_dir/.env"
+
+chown "$app:$app" "$install_dir/.env"
+
+#=================================================
+# BUILD APP
+#=================================================
+
+ynh_script_progression "Building $app... (this may take a while)"
+
+pushd $install_dir
+
+    ynh_hide_warnings corepack enable
+
+    ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
+    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
+    ynh_hide_warnings ynh_exec_as_app pnpm dlx tsx scripts/prepare-translation-status.ts
+    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm build
+
+popd
+
+mkdir -p "$install_dir/elk-data"
+
+chown -R "$app:$app" "$install_dir"
+
+#=================================================
+# SYSTEM CONFIGURATION
+#=================================================
+
+ynh_script_progression "Adding system configurations related to $app..."
+
+ynh_config_add_nginx
+
+ynh_config_add_systemd
+
+yunohost service add "$app" --description="nimble Mastodon web client" --log="/var/log/$app/$app.log"
+
+ynh_config_add_logrotate
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+
+ynh_script_progression "Starting $app's systemd service..."
+
+ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log" --wait_until="Listening on"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression "Installation of $app completed"
