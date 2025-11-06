@@ -20,9 +20,7 @@ admindoc = "https://docs.elk.zone"
 userdoc = "https://docs.elk.zone"
 code = "https://github.com/elk-zone/elk"
 
-# FIXME: optional but recommended if relevant, this is meant to contain the Common Platform Enumeration, which is
-# sort of a standard id for applications defined by the NIST. In particular, YunoHost may use this is in the future
-# to easily track CVE (=security reports) related to apps. The CPE may be obtained by searching here:
+# The CPE may be obtained by searching here:
 # https://nvd.nist.gov/products/cpe/search.
 # For example, for Nextcloud, the CPE is 'cpe:2.3:a:nextcloud:nextcloud' (no need to include the version number)
 # cpe = "???"
@@ -73,7 +71,7 @@ ram.runtime = "300M"
     help.en = "Restrict this installation of Elk to only allow login with accounts that belong to the `Public/Default server` (above)?"
     help.fr = "Limiter cette installation d'Elk à n'autoriser la connexion qu'avec des comptes appartenant au serveur `Public/Default` (ci-dessus) ?"
     type = "boolean"
-    default = "false"
+    default = false
 
     [install.nuxt_public_privacy_policy_url]
     ask.en = "Privacy Policy URL"
