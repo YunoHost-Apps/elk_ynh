@@ -77,8 +77,7 @@ ram.runtime = "50M"
     ask.fr = "Un seul cas ?"
     help.en = "Restrict this installation of Elk to only allow login with accounts that belong to the `Public/Default server` (above)?"
     help.fr = "Limiter cette installation d'Elk à n'autoriser la connexion qu'avec des comptes appartenant au serveur `Public/Default` (ci-dessus) ?"
-    type = "select"
-    choices = ["false", "true"]
+    type = "boolean"
     default = "false"
 
     [install.nuxt_public_privacy_policy_url]
