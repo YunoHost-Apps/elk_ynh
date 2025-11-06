@@ -39,18 +39,13 @@ ldap = false
 
 sso = false
 
-disk = "1G"
+disk = "2G"
 ram.build = "4G"
-ram.runtime = "50M"
+ram.runtime = "300M"
 
 [install]
     [install.domain]
     type = "domain"
-
-    [install.path]
-    type = "path"
-    default = "/"
-
 
     [install.init_main_permission]
     type = "group"
