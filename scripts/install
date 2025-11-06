@@ -51,7 +51,7 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="nimble Mastodon web client" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="nimble Mastodon Web client" --log="/var/log/$app/$app.log"
 
 ynh_config_add_logrotate
 
