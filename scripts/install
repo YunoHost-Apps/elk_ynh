@@ -40,7 +40,7 @@ pushd $install_dir
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
     ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
     ynh_hide_warnings ynh_exec_as_app pnpm dlx tsx scripts/prepare-translation-status.ts
-    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=4096" pnpm build
+    ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
 
 popd
 
