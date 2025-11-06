@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "elk"
 name = "Elk"
-description.en = "nimble Mastodon web client"
-description.fr = "Client web Mastodon agile"
+description.en = "nimble Mastodon Web client"
+description.fr = "Client Web Mastodon agile"
 
 version = "0.16.0~ynh1"
 
@@ -28,13 +28,12 @@ code = "https://github.com/elk-zone/elk"
 fund = "https://opencollective.com/elk"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "2G"

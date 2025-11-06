@@ -1,0 +1,1 @@
+* Si vous avez défini un serveur public/par défaut, celui-ci doit exposer publiquement son flux local afin qu'Elk puisse afficher quoi que ce soit avant la connexion, sinon vous obtiendrez une erreur « non autorisé ».
