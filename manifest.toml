@@ -1,0 +1,105 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "elk"
+name = "Elk"
+description.en = "nimble Mastodon web client"
+description.fr = "Client web Mastodon agile"
+
+version = "0.16.0~ynh1"
+
+maintainers = ["trendless"]
+
+[upstream]
+
+license = "MIT"
+# website = ""
+demo = "https://elk.zone"
+admindoc = "https://docs.elk.zone"
+userdoc = "https://docs.elk.zone"
+code = "https://github.com/elk-zone/elk"
+
+# The CPE may be obtained by searching here:
+# https://nvd.nist.gov/products/cpe/search.
+# For example, for Nextcloud, the CPE is 'cpe:2.3:a:nextcloud:nextcloud' (no need to include the version number)
+# cpe = "???"
+
+fund = "https://opencollective.com/elk"
+
+[integration]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+
+sso = false
+
+disk = "2G"
+ram.build = "4G"
+ram.runtime = "300M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    # [install.language]
+    # ask.en = "Choose the application language"
+    # ask.fr = "Choisissez la langue de l'application"
+    # type = "select"
+    # choices = ["fr", "en"]
+    # default = "en"
+
+    [install.nuxt_public_default_server]
+    ask.en = "Public/Default server"
+    ask.fr = "Serveur public/par défaut"
+    help.en = "(optional) The domain of the Mastodon (or Glitch-soc, GoToSocial, etc) server whose local feed will be displayed prior to login; if `single instance` (below) is set to `true`, only its accounts may log in"
+    help.fr = "(Facultatif) Le domaine du serveur Mastodon (ou Glitch-soc, GoToSocial, etc.) dont le flux local sera affiché avant la connexion ; si `single instance` (ci-dessous) est défini sur `true`, seuls les comptes de ce serveur pourront se connecter"
+    example = "e.g., mastodon.social"
+    type = "string"
+    optional = true
+
+    [install.nuxt_public_single_instance]
+    ask.en = "Single instance?"
+    ask.fr = "Un seul cas ?"
+    help.en = "Restrict this installation of Elk to only allow login with accounts that belong to the `Public/Default server` (above)?"
+    help.fr = "Limiter cette installation d'Elk à n'autoriser la connexion qu'avec des comptes appartenant au serveur `Public/Default` (ci-dessus) ?"
+    type = "boolean"
+    default = false
+
+    [install.nuxt_public_privacy_policy_url]
+    ask.en = "Privacy Policy URL"
+    ask.fr = "URL de la politique de confidentialité"
+    help.en = "(optional) The URL of the privacy policy that covers this installation of Elk"
+    help.fr = "(facultatif) L'URL de la politique de confidentialité qui couvre cette installation d'Elk"
+    example = "e.g., https://mastodon.social/privacy-policy"
+    type = "string"
+    optional = true
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    url = "https://github.com/elk-zone/elk/archive/refs/tags/v0.16.0.tar.gz"
+    sha256 = "65fdebe94a2476ee898f88177aec57410635a4da2df96f0783e88e65eaa3c8a7"
+    autoupdate.strategy = "latest_github_release"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.permissions]
+     main.url = "/"
+
+    [resources.ports]
+    main.default = 5314
+
+    [resources.nodejs]
+    version = "20"

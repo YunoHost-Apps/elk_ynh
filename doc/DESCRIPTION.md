@@ -1,0 +1,1 @@
+Elk is an alternative way to access your Mastodon account from your browser, using the Mastodon API. You can use Elk right in your browser; on a mobile device, you can install the app to your home screen right from your browser for easy access. (This is called a Progressive Web App, or PWA.)
