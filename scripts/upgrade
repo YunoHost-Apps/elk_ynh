@@ -30,9 +30,13 @@ ynh_script_progression "Building $app... (this may take a while)"
 pushd $install_dir
     ynh_hide_warnings corepack enable
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app pnpm nuxt prepare
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
-    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
-    ynh_hide_warnings ynh_exec_as_app pnpm dlx tsx scripts/prepare-translation-status.ts
+    ynh_hide_warnings ynh_exec_as_app pnpm stale-dep -u 
+    ynh_hide_warnings ynh_exec_as_app pnpm simple-git-hooks 
+    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare 
+    ynh_hide_warnings ynh_exec_as_app pnpm nr prepare-translation-status 
+    ynh_hide_warnings ynh_exec_as_app pnpm tsx scripts/prepare.ts
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
 popd
 
