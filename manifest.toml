@@ -4,7 +4,7 @@ packaging_format = 2
 
 id = "elk"
 name = "Elk"
-description.en = "nimble Mastodon Web client"
+description.en = "Nimble Mastodon Web client"
 description.fr = "Client Web Mastodon agile"
 
 version = "0.17.1~ynh1"
