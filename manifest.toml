@@ -86,8 +86,8 @@ ram.runtime = "300M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/elk-zone/elk/archive/refs/tags/v0.17.0.tar.gz"
-    sha256 = "bf85bf900b2947736d09455398052a17e075cca206d2bd8444da768aeb763eb1"
+    url = "https://github.com/elk-zone/elk/archive/refs/tags/v0.17.1.tar.gz"
+    sha256 = "f8af3fec3899e205e7427a6495d7254e9afe0d3d44dc380acd81d09b36100f1e"
     autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
