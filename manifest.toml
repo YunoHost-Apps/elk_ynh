@@ -62,7 +62,7 @@ ram.runtime = "300M"
     help.fr = "(Facultatif) Le domaine du serveur Mastodon (ou Glitch-soc, GoToSocial, etc.) dont le flux local sera affiché avant la connexion ; si `single instance` (ci-dessous) est défini sur `true`, seuls les comptes de ce serveur pourront se connecter"
     example = "e.g., mastodon.social"
     type = "string"
-    optional = true
+    default = "m.webtoo.ls"
 
     [install.nuxt_public_single_instance]
     ask.en = "Single instance?"
