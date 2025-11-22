@@ -1,1 +1,2 @@
 * Si vous avez configuré un serveur public/par défaut personnalisé, ce serveur doit exposer publiquement son flux local pour qu'Elk puisse afficher quoi que ce soit avant la connexion, sinon vous obtiendrez une erreur « non autorisée ».
+* Lors du premier chargement d'une page https://__DOMAIN____PATH__ dans une session de navigateur, il peut être nécessaire d'actualiser la page Web pour que le contenu s'affiche.

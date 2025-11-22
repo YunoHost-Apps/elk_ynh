@@ -1,1 +1,0 @@
-* Lors du premier chargement d'une page https://__DOMAIN____PATH__ dans une session de navigateur, il peut être nécessaire d'actualiser la page Web pour que le contenu s'affiche.
