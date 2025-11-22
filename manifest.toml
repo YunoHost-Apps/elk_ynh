@@ -79,7 +79,7 @@ ram.runtime = "300M"
     help.fr = "(facultatif) L'URL de la politique de confidentialité qui couvre cette installation d'Elk"
     example = "e.g., https://mastodon.social/privacy-policy"
     type = "string"
-    optional = true
+    default = "https://docs.elk.zone/privacy"
 
 [resources]
 
