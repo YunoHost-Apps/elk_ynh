@@ -1,5 +1,5 @@
 [Unit]
-Description=Elk: Mastodon Web client
+Description=Elk: Mastodon web client
 After=network.target
 
 [Service]

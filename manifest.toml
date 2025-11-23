@@ -4,7 +4,7 @@ packaging_format = 2
 
 id = "elk"
 name = "Elk"
-description.en = "Mastodon Web client"
+description.en = "Nimble Mastodon web client"
 description.fr = "Client Web Mastodon"
 
 version = "0.17.2~ynh1"
@@ -43,29 +43,26 @@ ram.runtime = "300M"
     default = "visitors"
 
     [install.nuxt_public_default_server]
-    ask.en = "Public default server"
-    ask.fr = "Serveur public par default"
-    help.en = "(optional) The domain of the Mastodon (or Glitch-soc, GoToSocial, etc) server whose local feed will be displayed prior to login; if `single instance` (below) is set to `true`, only its accounts may log in"
-    help.fr = "(Facultatif) Le domaine du serveur Mastodon (ou Glitch-soc, GoToSocial, etc.) dont le flux local sera affiché avant la connexion ; si `single instance` (ci-dessous) est défini sur `true`, seuls les comptes de ce serveur pourront se connecter"
-    example = "e.g., mastodon.social"
+    ask.en = "Default server"
+    ask.fr = "Serveur par default"
+    help.en = "The domain of the Mastodon (or Glitch-soc, GoToSocial, etc) server whose local feed will be displayed prior to login; if `single instance` (below) is set to `true`, only its accounts may log in; e.g., `mastodon.social`"
+    help.fr = "Le domaine du serveur Mastodon (ou Glitch-soc, GoToSocial, etc.) dont le flux local sera affiché avant la connexion ; si `single instance` (ci-dessous) est défini sur `true`, seuls les comptes de ce serveur pourront se connecter ; par exemple : `mastodon.social`"
     type = "string"
-    optional = true
     default = "m.webtoo.ls"
 
     [install.nuxt_public_single_instance]
     ask.en = "Single instance?"
     ask.fr = "Instance unique ?"
-    help.en = "Restrict this installation of Elk to only allow login with accounts that belong to the `Public/Default server` (above)?"
-    help.fr = "Limiter cette installation d'Elk à n'autoriser la connexion qu'avec des comptes appartenant au serveur `Public/Default` (ci-dessus) ?"
+    help.en = "Restrict this installation of Elk to only allow login with accounts from the `Default server` (above)?"
+    help.fr = "Limiter cette installation d'Elk à n'autoriser la connexion qu'avec les comptes du `serveur par default` (ci-dessus) ?"
     type = "boolean"
     default = false
 
     [install.nuxt_public_privacy_policy_url]
     ask.en = "Privacy Policy URL"
     ask.fr = "URL de la politique de confidentialité"
-    help.en = "(optional) The URL of the privacy policy that covers this installation of Elk"
-    help.fr = "(facultatif) L'URL de la politique de confidentialité qui couvre cette installation d'Elk"
-    example = "e.g., https://mastodon.social/privacy-policy"
+    help.en = "The URL of the privacy policy that covers this installation of Elk; e.g., `https://mastodon.social/privacy-policy`"
+    help.fr = "L'URL de la politique de confidentialité qui couvre cette installation d'Elk ; par exemple : `https://mastodon.social/privacy-policy`"
     type = "string"
     default = "https://docs.elk.zone/privacy"
 
@@ -83,7 +80,7 @@ ram.runtime = "300M"
     [resources.install_dir]
 
     [resources.permissions]
-     main.url = "/"
+    main.url = "/"
 
     [resources.ports]
     main.default = 5314
