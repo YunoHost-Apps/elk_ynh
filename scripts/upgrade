@@ -32,11 +32,7 @@ pushd $install_dir
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
     ynh_hide_warnings ynh_exec_as_app pnpm nuxt prepare
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
-    ynh_hide_warnings ynh_exec_as_app pnpm stale-dep -u 
-    ynh_hide_warnings ynh_exec_as_app pnpm simple-git-hooks 
-    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare 
-    ynh_hide_warnings ynh_exec_as_app pnpm nr prepare-translation-status 
-    ynh_hide_warnings ynh_exec_as_app pnpm tsx scripts/prepare.ts
+    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
 popd
 
@@ -51,7 +47,7 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="nimble Mastodon Web client" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Nimble Mastodon web client" --log="/var/log/$app/$app.log"
 
 ynh_config_add_logrotate
 
