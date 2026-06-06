@@ -30,11 +30,12 @@ ynh_script_progression "Building $app... (this may take a while)"
 pushd $install_dir
     ynh_hide_warnings corepack enable
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile --ignore-scripts
-    ynh_hide_warnings ynh_exec_as_app pnpm nuxt prepare
+    ynh_hide_warnings ynh_exec_as_app pnpm run prepare
     ynh_hide_warnings ynh_exec_as_app pnpm i --frozen-lockfile
-    ynh_hide_warnings ynh_exec_as_app pnpm nuxi prepare
     ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" pnpm build
 popd
+
+ynh_safe_rm "$install_dir/node_modules"
 
 chown -R "$app:$app" "$install_dir"
 
