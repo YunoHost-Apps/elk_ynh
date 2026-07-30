@@ -7,7 +7,7 @@ name = "Elk"
 description.en = "Nimble Mastodon web client"
 description.fr = "Client Web Mastodon"
 
-version = "1.0.0~ynh1"
+version = "1.0.1~ynh1"
 
 maintainers = ["trendless"]
 
@@ -71,8 +71,8 @@ ram.runtime = "300M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/elk-zone/elk/archive/refs/tags/v1.0.0.tar.gz"
-    sha256 = "b47c1d8b7a24d59aef425873a007d35d41c88f60a9f890ee783fd14ac9951cce"
+    url = "https://github.com/elk-zone/elk/archive/refs/tags/v1.0.1.tar.gz"
+    sha256 = "417ee41c8e284818902f7c1341e0b570b2a9e457cb2ea64bb03ae0e0755bc129"
     autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
