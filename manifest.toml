@@ -7,7 +7,7 @@ name = "Elk"
 description.en = "Nimble Mastodon web client"
 description.fr = "Client Web Mastodon"
 
-version = "1.0.1~ynh1"
+version = "1.0.1~ynh2"
 
 maintainers = ["trendless"]
 
